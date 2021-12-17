@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  outline-color: unset;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+}
+
+li {
+  list-style: none;
+}

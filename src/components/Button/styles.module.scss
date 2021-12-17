@@ -1,0 +1,5 @@
+@use '../../global/_variables.scss' as vars;
+
+.Header {
+  font-size: vars.$font-size-h3;
+}
