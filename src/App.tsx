@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './components';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button>Click</Button>
       </header>
     </div>
   );

@@ -1,5 +1,14 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
-export const Button = () => {
-  return <div>Button</div>;
-};
+interface Props {
+  children: ReactNode;
+}
+
+export default function Button({ children }: Props): ReactElement {
+  return (
+    <div>
+      <h3>Test Button</h3>
+      <button>{children}</button>
+    </div>
+  );
+}

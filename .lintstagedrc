@@ -1,0 +1,5 @@
+// select which files to be linted in stage to optimize process time
+
+{
+  "*.(js|jsx|ts|tsx)": "eslint --fix"
+}
