@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:all": "CI=true react-scripts-ts test && yarn run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -49,7 +50,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn run lint:fix",
+      "pre-push": "yarn run test:all"
     }
   },
   "lint-staged": {
