@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:all": "CI=true react-scripts-ts test && yarn run lint"
+    "test:all": "CI=true react-scripts test && yarn run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -50,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run lint:fix",
+      "pre-commit": "lint-staged && yarn test",
       "pre-push": "yarn run test:all"
     }
   },
@@ -58,7 +58,7 @@
     "*.{js,ts,tsx}": [
       "eslint --quiet --fix"
     ],
-    "*.{json,md,html}": [
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
   }
