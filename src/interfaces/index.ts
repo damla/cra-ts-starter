@@ -3,10 +3,12 @@ export interface Item {
   value: string;
 }
 
+export type Items = Item[];
+
 export interface ItemContextState {
-  Items: Item[];
-  addItem: () => void;
-  removeItem: () => void;
+  Items: Items;
+  addItem: (newItem: Item) => void;
+  removeItem: (id: string) => void;
   removeAll: () => void;
-  updateItem: () => void;
+  updateItem: (id: string, data: Item) => void;
 }

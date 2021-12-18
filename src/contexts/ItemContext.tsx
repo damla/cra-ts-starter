@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, ReactElement, ReactNode } from 'react';
 import { Item, ItemContextState } from '../interfaces';
 // import { getRandom } from '../utils/helpers';
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid'; // TODO: DELETE HERE IF IT IS NOT NECESSARY
 
 interface Props {
   children: ReactNode;
@@ -9,22 +9,25 @@ interface Props {
 
 // set default values for initializing
 const contextDefaultValues: ItemContextState = {
-  Items: [
-    {
-      id: '1',
-      value: 'Implement CRUD processes.',
-    },
-  ],
-  addItem: () => {},
-  removeItem: () => {},
-  removeAll: () => {},
-  updateItem: () => {},
+  Items: [{ id: '1', value: 'test' }],
+  addItem: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  removeItem: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  removeAll: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  updateItem: function (): void {
+    throw new Error('Function not implemented.');
+  },
 };
 
 // created context with default values
 const ItemContext = createContext<ItemContextState>(contextDefaultValues);
 
-export const TodoProvider = ({ children }: Props): ReactElement => {
+export const ItemProvider = ({ children }: Props): ReactElement => {
   // set default values
   const [Items, setItems] = useState<Item[]>(contextDefaultValues.Items);
 
@@ -54,7 +57,7 @@ export const TodoProvider = ({ children }: Props): ReactElement => {
   };
 
   // Firstly, check if there any value exists in the list.
-  // If does exist, set todo items list to an empty array otherwise, give alert to inform user.
+  // If does exist, set item list to an empty array otherwise, give alert to inform user.
   const removeAll = () =>
     Items.length === 0 ? alert('There are no tasks found in the list!') : setItems([]);
 
@@ -79,4 +82,4 @@ export const TodoProvider = ({ children }: Props): ReactElement => {
 };
 
 // created custom hook
-export const useTodo = () => useContext(ItemContext);
+export const useItem = () => useContext(ItemContext);
